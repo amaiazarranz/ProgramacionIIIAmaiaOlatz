@@ -1,0 +1,2 @@
+amaia;zarranz;mendizabal;72608820M;24-08-1998 02:02:02;amaiazarranz;amaiaz;amaia.zarranz@opendeusto.es;e0;estudiante;9.0;1;2
+joane;zarranz;mendizabal;72608820P;21-03-2002 02:02:02;joanezarranz;joanez;joane.zarranz@opendeusto.es;e0;estudiante;9.0;1;2
