@@ -60,4 +60,19 @@ public class Estudiante extends Persona
     public void setFaltagrave(int faltagrave) {
         this.faltagrave = faltagrave;
     }
+
+    @Override
+    public String toString() {
+        return "Estudiante{" +
+                "notamedia=" + notamedia +
+                ", faltaleve=" + faltaleve +
+                ", faltagrave=" + faltagrave +
+                ", nombre='" + nombre + '\'' +
+                ", apellido1='" + apellido1 + '\'' +
+                ", apellido2='" + apellido2 + '\'' +
+                ", dni='" + dni + '\'' +
+                ", fechanacimiento=" + fechanacimiento +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

@@ -61,6 +61,37 @@ public class LecturaEscrituraFichero {
         return listaDevolucion;
     }
 
+    public static void almacenarEstudiantes(ArrayList<Estudiante> todosEstudiantes, String path) {
+
+        File aFile = new File(path);
+
+        try {
+            FileWriter fw = new FileWriter(aFile);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            for (Estudiante a : todosEstudiantes) {
+
+                DateFormat date = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+
+                String fecha = date.format(a.getFechanacimiento()); // añadir la fecha de string a fecha
+
+                String escribir = a.getNombre() + ";" + a.getApellido1() + ";" + a.getApellido2()+ ";" + a.getDni() + ";" +
+                         fecha + ";" + a.getUser()+ ";"+ a.getPassword()+ ";"+ a.getEmail()+ ";" + a.getTipopersona() + ";"
+                        + a.getIban() + ";" +a.getNotamedia() + ";"+ a.getFaltaleve() + ";" +a.getFaltagrave() +"\n";
+
+                        bw.write(escribir);
+
+            }
+
+            bw.flush();
+            bw.close();
+            fw.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public static ArrayList<Trabajador> leerTrabajadores (String path) {
 
