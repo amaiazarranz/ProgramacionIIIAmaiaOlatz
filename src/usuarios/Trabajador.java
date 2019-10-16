@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class Trabajador extends Persona
 {
-    double salario;
+    private double salario;
 
     ArrayList<String> diccionarioTrabajdores= new ArrayList <String>();
 

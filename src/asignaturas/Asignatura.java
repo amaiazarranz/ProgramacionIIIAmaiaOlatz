@@ -2,10 +2,10 @@ package asignaturas;
 
 public class Asignatura
 {
-    String nombre;
-    String idioma;
-    int codigo;
-    String docente;
+    private String nombre;
+    private String idioma;
+    private int codigo;
+    private String docente;
 
     public Asignatura(String nombre, String idioma, int codigo, String docente) {
         this.nombre = nombre;

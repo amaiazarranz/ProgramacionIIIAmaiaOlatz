@@ -6,17 +6,17 @@ import interfaces.IMensajes;
 
 public abstract class Persona implements IMensajes
 {
-    String nombre;
-    String apellido1;
-    String apellido2;
-    String dni;
-    Date fechanacimiento;
-    String user;
-    String password;
-    String email;
-    String iban;
-    String tipopersona;
-    ImageIcon fotoperfil;
+    private String nombre;
+    private String apellido1;
+    private String apellido2;
+    private String dni;
+    private Date fechanacimiento;
+    private String user;
+    private String password;
+    private String email;
+    private String iban;
+    private String tipopersona;
+    private ImageIcon fotoperfil;
 
     public Persona(String nombre, String apellido1, String apellido2, String dni, Date fechanacimiento, String user,
                    String password, String email, String iban, String tipopersona) {

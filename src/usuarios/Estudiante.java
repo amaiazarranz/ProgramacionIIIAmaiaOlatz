@@ -11,9 +11,9 @@ public class Estudiante extends Persona
 
     ArrayList<String> diccionarioEstudiantes= new ArrayList <String>();
 
-    double notamedia;
-    int faltaleve;
-    int faltagrave;
+    private double notamedia;
+    private int faltaleve;
+    private int faltagrave;
 
     public Estudiante(String nombre, String apellido1, String apellido2, String dni, Date fechanacimiento,
                       String user, String password, String email, String iban, String tipopersona,
