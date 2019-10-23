@@ -3,16 +3,15 @@ package usuarios;
 import utilidades.LecturaEscrituraFichero;
 import utilidades.Utilidades;
 import java.util.ArrayList;
-import java.util.Date;
 
 public final class Secretario extends Trabajador
 {
     ArrayList<String> diccionarioSecretarios= new ArrayList <String>();
 
-    public Secretario(String nombre, String apellido1, String apellido2, String dni, Date fechanacimiento,
+    public Secretario(String nombre, String apellido1, String apellido2, String dni,
                       String user, String password, String email, String iban, String tipopersona,
                       double salario) {
-        super(nombre, apellido1, apellido2, dni, fechanacimiento, user, password, email, iban, tipopersona, salario);
+        super(nombre, apellido1, apellido2, dni,  user, password, email, iban, tipopersona, salario);
     }
 
     public Secretario(){
@@ -22,17 +21,16 @@ public final class Secretario extends Trabajador
     @Override
     public String toString() {
         return "Secretario{" +
-                ", nombre='" + nombre + '\'' +
-                ", apellido1='" + apellido1 + '\'' +
-                ", apellido2='" + apellido2 + '\'' +
-                ", dni='" + dni + '\'' +
-                ", fechanacimiento=" + fechanacimiento +
-                ", user='" + user + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", iban='" + iban + '\'' +
-                ", tipopersona='" + tipopersona + '\'' +
-                "salario=" + salario +
+                ", nombre='" + this.getNombre() + '\'' +
+                ", apellido1='" + this.getApellido1() + '\'' +
+                ", apellido2='" + this.getApellido2() + '\'' +
+                ", dni='" + this.getDni() + '\'' +
+                ", user='" + this.getUser() + '\'' +
+                ", password='" + this.getPassword() + '\'' +
+                ", email='" + this.getEmail() + '\'' +
+                ", iban='" + this.getIban() + '\'' +
+                ", tipopersona='" + this.getTipopersona() + '\'' +
+                "salario=" + this.getSalario() +
                 '}';
     }
 
@@ -44,7 +42,7 @@ public final class Secretario extends Trabajador
 
             if (a.getFaltaleve()>=2 || a.getFaltagrave()>=1 ) {
 
-                System.out.println("DNI " + a.dni + " Estudiante " + a.nombre + " " + a.apellido1 + " " + a.apellido2);
+                System.out.println("DNI " + a.getDni() + " Estudiante " + a.getNombre() + " " + a.getApellido1() + " " + a.getApellido2());
                 //no poner diccionarioEstudiantes sino sale el primero siempre
             }
 
@@ -68,7 +66,7 @@ public final class Secretario extends Trabajador
                 }
 
                 System.out.println("Ahora los estudiantes que nos quedan son los siguientes");
-                System.out.println("DNI " + b.dni + " Estudiante " + b.nombre + " " + b.apellido1 + " " + b.apellido2);
+                System.out.println("DNI " + b.getDni() + " Estudiante " + b.getNombre() + " " + b.getApellido1() + " " + b.getApellido2());
 
             }
         }

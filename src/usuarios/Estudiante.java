@@ -1,10 +1,7 @@
 package usuarios;
 
-import usuarios.Persona;
-
-import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Date;
+
 
 public class Estudiante extends Persona
 {
@@ -15,11 +12,8 @@ public class Estudiante extends Persona
     private int faltaleve;
     private int faltagrave;
 
-    public Estudiante(String nombre, String apellido1, String apellido2, String dni, Date fechanacimiento,
-                      String user, String password, String email, String iban, String tipopersona,
-                      double notamedia, int faltaleve, int faltagrave) {
-        super(nombre, apellido1, apellido2, dni, fechanacimiento, user, password, email, iban, tipopersona);
-
+    public Estudiante(String nombre, String apellido1, String apellido2, String dni, String user, String password, String email, String iban, String tipopersona, double notamedia, int faltaleve, int faltagrave) {
+        super(nombre, apellido1, apellido2, dni, user, password, email, iban, tipopersona);
         this.notamedia = notamedia;
         this.faltaleve = faltaleve;
         this.faltagrave = faltagrave;
@@ -67,12 +61,11 @@ public class Estudiante extends Persona
                 "notamedia=" + notamedia +
                 ", faltaleve=" + faltaleve +
                 ", faltagrave=" + faltagrave +
-                ", nombre='" + nombre + '\'' +
-                ", apellido1='" + apellido1 + '\'' +
-                ", apellido2='" + apellido2 + '\'' +
-                ", dni='" + dni + '\'' +
-                ", fechanacimiento=" + fechanacimiento +
-                ", email='" + email + '\'' +
+                ", nombre='" + this.getNombre() + '\'' +
+                ", apellido1='" + this.getApellido1() + '\'' +
+                ", apellido2='" + this.getApellido2() + '\'' +
+                ", dni='" + this.getDni() + '\'' +
+                ", email='" + this.getEmail() + '\'' +
                 '}';
     }
 }

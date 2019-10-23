@@ -6,11 +6,8 @@ import usuarios.Secretario;
 import usuarios.Trabajador;
 
 import java.io.*;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+
 
 public class LecturaEscrituraFichero {
 
@@ -30,17 +27,13 @@ public class LecturaEscrituraFichero {
 
                 String[] estudiantesLeidos = linea.split(";");
 
-                DateFormat date = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss"); // tiene que leerse con ese formato si o
-                // si
-
-                Date fecha = date.parse(estudiantesLeidos[4]); // para pasar de string a date
-                Double notamedia=Double.parseDouble(estudiantesLeidos [10]); //en el fichero están en string
-                Integer faltaleve=Integer.valueOf(estudiantesLeidos [11]);
-                Integer faltagrave=Integer.valueOf(estudiantesLeidos[12]);
+                Double notamedia=Double.parseDouble(estudiantesLeidos [9]); //en el fichero están en string
+                Integer faltaleve=Integer.valueOf(estudiantesLeidos [10]);
+                Integer faltagrave=Integer.valueOf(estudiantesLeidos[11]);
 
 
                 Estudiante estudiante = new Estudiante (estudiantesLeidos[0], estudiantesLeidos[1], estudiantesLeidos[2],
-                        estudiantesLeidos [3], fecha, estudiantesLeidos [5], estudiantesLeidos [6], estudiantesLeidos [7], estudiantesLeidos [8], estudiantesLeidos [9],
+                        estudiantesLeidos [3], estudiantesLeidos [4], estudiantesLeidos [5], estudiantesLeidos [6], estudiantesLeidos [7], estudiantesLeidos [8],
                         notamedia, faltaleve, faltagrave); // porque es fecha es date //tiene que ser igual que el constructor de estudiante
 
                 listaDevolucion.add(estudiante);
@@ -54,8 +47,6 @@ public class LecturaEscrituraFichero {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (ParseException e) {
-            System.out.println("Fecha mal introducida");
         }
 
         return listaDevolucion;
@@ -71,12 +62,8 @@ public class LecturaEscrituraFichero {
 
             for (Estudiante a : todosEstudiantes) {
 
-                DateFormat date = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
-
-                String fecha = date.format(a.getFechanacimiento()); // añadir la fecha de string a fecha
-
                 String escribir = a.getNombre() + ";" + a.getApellido1() + ";" + a.getApellido2()+ ";" + a.getDni() + ";" +
-                         fecha + ";" + a.getUser()+ ";"+ a.getPassword()+ ";"+ a.getEmail()+ ";" + a.getTipopersona() + ";"
+                          a.getUser()+ ";"+ a.getPassword()+ ";"+ a.getEmail()+ ";" + a.getTipopersona() + ";"
                         + a.getIban() + ";" +a.getNotamedia() + ";"+ a.getFaltaleve() + ";" +a.getFaltagrave() +"\n";
 
                         bw.write(escribir);
@@ -109,23 +96,20 @@ public class LecturaEscrituraFichero {
 
                 String[] trabajadoresLeidos = linea.split(";");
 
-                DateFormat date = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+                Double salario=Double.valueOf(trabajadoresLeidos[9]);
 
-                Date fecha = date.parse(trabajadoresLeidos[4]);
-                Double salario=Double.valueOf(trabajadoresLeidos[10]);
-
-                if (trabajadoresLeidos [9].equals("secretario")) {
+                if (trabajadoresLeidos [8].equals("secretario")) {
 
                     Secretario secretario = new Secretario (trabajadoresLeidos[0], trabajadoresLeidos[1], trabajadoresLeidos[2],
-                            trabajadoresLeidos [3], fecha, trabajadoresLeidos [5], trabajadoresLeidos [6], trabajadoresLeidos [7], trabajadoresLeidos [8], trabajadoresLeidos [9],
+                            trabajadoresLeidos [3], trabajadoresLeidos [4], trabajadoresLeidos [5], trabajadoresLeidos [6], trabajadoresLeidos [7], trabajadoresLeidos [8],
                            salario);
 
                     listaDevolucion.add(secretario);
                 }
-                else if (trabajadoresLeidos [9].equals("profesor")){
+                else if (trabajadoresLeidos [8].equals("profesor")){
 
                     Profesor profesor = new Profesor (trabajadoresLeidos[0], trabajadoresLeidos[1], trabajadoresLeidos[2],
-                            trabajadoresLeidos [3], fecha, trabajadoresLeidos [5], trabajadoresLeidos [6], trabajadoresLeidos [7], trabajadoresLeidos [8], trabajadoresLeidos [9],
+                            trabajadoresLeidos [3], trabajadoresLeidos [4], trabajadoresLeidos [5], trabajadoresLeidos [6], trabajadoresLeidos [7], trabajadoresLeidos [8],
                             salario);
 
                     listaDevolucion.add(profesor);
@@ -138,8 +122,6 @@ public class LecturaEscrituraFichero {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (ParseException e) {
-            System.out.println("Fecha mal introducida");
         }
 
         return listaDevolucion;

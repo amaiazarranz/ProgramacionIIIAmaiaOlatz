@@ -4,7 +4,6 @@ import usuarios.Persona;
 
 import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Trabajador extends Persona
 {
@@ -12,10 +11,8 @@ public class Trabajador extends Persona
 
     ArrayList<String> diccionarioTrabajdores= new ArrayList <String>();
 
-    public Trabajador(String nombre, String apellido1, String apellido2, String dni, Date fechanacimiento,
-                      String user, String password, String email, String iban, String tipopersona,
-                      double salario) {
-        super(nombre, apellido1, apellido2, dni, fechanacimiento, user, password, email, iban, tipopersona);
+    public Trabajador(String nombre, String apellido1, String apellido2, String dni, String user, String password, String email, String iban, String tipopersona, double salario) {
+        super(nombre, apellido1, apellido2, dni, user, password, email, iban, tipopersona);
         this.salario = salario;
     }
 

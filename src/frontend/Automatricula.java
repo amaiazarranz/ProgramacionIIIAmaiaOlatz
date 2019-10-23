@@ -1,15 +1,16 @@
 package frontend;
 
+import sqlite.DBManager;
 import usuarios.Estudiante;
 import usuarios.Trabajador;
 import utilidades.Comprobaciones;
 import utilidades.LecturaEscrituraFichero;
 import utilidades.Utilidades;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.regex.Pattern;
 
 public class Automatricula
@@ -222,43 +223,6 @@ public class Automatricula
         } while(dni.length()!=9||comprobacion ==true);
 
 
-        System.out.println("¿Cuál es tu fecha de nacimiento?");
-        String fechaNacimiento;
-        boolean correcto;
-        boolean res;
-        Date fechaDate = null;
-
-        do {
-
-            fechaNacimiento = Utilidades.leerCadena();
-            res = Comprobaciones.validarFecha(fechaNacimiento);
-
-            if (res == true) {
-                System.out.println("La fecha es valida");
-            } else{
-                System.out.println("La fecha no es valida");
-            }
-
-
-            SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
-
-            try {
-
-                fechaDate = formato.parse(fechaNacimiento);
-                correcto = true;
-
-            } catch (ParseException e) {
-                System.out.println("El formato de la fecha lo has introducido mal");
-                correcto = false;
-
-                System.out.println("Introduzca un formato adecuado");
-
-            }
-
-        }while (correcto==false|| res==false); //poner dos iguales para comparar, sino asigna
-
-
-
 
         System.out.println("Introduzca tu correo");
         System.out.println("Tiene que acabar en @gmail.com");
@@ -345,7 +309,7 @@ public class Automatricula
         } while(iban.length()!=24||comprobacionIban ==true);
 
 
-        Estudiante user = new Estudiante(nombre,apellido1,apellido2,dni,fechaDate, nombreUsuario, contrasena, correo,
+        Estudiante user = new Estudiante(nombre,apellido1,apellido2,dni, nombreUsuario, contrasena, correo,
                 iban, "estudiante", 0, 0, 0 );
         diccionarioEstudiantes.add(user);
 
@@ -354,9 +318,19 @@ public class Automatricula
             System.out.println(a);
         }
 
-        LecturaEscrituraFichero.almacenarEstudiantes(diccionarioEstudiantes, "estudiantes.txt");
+       // LecturaEscrituraFichero.almacenarEstudiantes(diccionarioEstudiantes, "estudiantes.txt");
+
+        try {
+            DBManager.insertEstudiante(nombre,apellido1,apellido2,dni, nombreUsuario, contrasena, correo,
+                    iban, "estudiante", 0, 0, 0 );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
+
+
+
 
 
 }

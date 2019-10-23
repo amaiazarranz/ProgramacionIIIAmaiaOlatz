@@ -1,4 +1,5 @@
-amaia;s;s;72608820M;22-10-2223 02:02:02;amaiaz;zzzzzzzzzzzzzzz;AMAIA;estudiante;S;0.0;0;0
-joane;s;s;72608820M;22-10-2223 02:02:02;joanez;zzzzzzzzzz;a;s;estudiante;0.0;0;0
-amaia;z;a;12345678I;22-10-2223 02:02:02;maixam;zzzzzzzzzz;am;estudiante;s;0.0;0;0
-martin;z;v;72608825Y;22-11-1998 02:02:02;martinz;zzzzzzzzzzzz;martin@gmail.com;estudiante;ET0000000000000000000000;0.0;0;0
+amaia;s;s;72608820M;amaiaz;zzzzzzzzzzzzzzz;AMAIA;estudiante;S;0.0;0;0
+joane;s;s;72608820M;joanez;zzzzzzzzzz;a;s;estudiante;0.0;0;0
+amaia;z;a;12345678I;maixam;zzzzzzzzzz;am;estudiante;s;0.0;0;0
+martin;z;v;72608825Y;martinz;zzzzzzzzzzzz;martin@gmail.com;estudiante;ET0000000000000000000000;0.0;0;0
+

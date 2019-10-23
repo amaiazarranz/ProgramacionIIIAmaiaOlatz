@@ -1,7 +1,5 @@
 package utilidades;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 public class Comprobaciones {
 
@@ -71,17 +69,6 @@ public class Comprobaciones {
         }
 
         return comprobacion;
-    }
-
-    public static boolean validarFecha(String fecha) {
-        try {
-            SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
-            formatoFecha.setLenient(false);
-            formatoFecha.parse(fecha);
-        } catch (ParseException e) {
-            return false;
-        }
-        return true;
     }
 
     public static boolean comprobaribannumeros(char[] arrayIban)

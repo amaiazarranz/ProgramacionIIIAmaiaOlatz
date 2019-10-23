@@ -1,2 +1,2 @@
-olatz;gonzalez;santiago;72608820I;27-05-1999 02:02:02;olatzgonzalez;olatzg;olatzgonzalez1@opendeusto.es;e3;secretario;1000
-leire;gonzalez;santiago;72608820K;27-05-2003 02:02:02;leiregonzalez;leireg;leiregonzalez1@opendeusto.es;e3;profesor;1000
+olatz;gonzalez;santiago;72608820I;olatzgonzalez;olatzg;olatzgonzalez1@opendeusto.es;e3;secretario;1000
+leire;gonzalez;santiago;72608820K;leiregonzalez;leireg;leiregonzalez1@opendeusto.es;e3;profesor;1000

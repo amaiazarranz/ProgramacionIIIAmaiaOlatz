@@ -7,7 +7,10 @@ import usuarios.Trabajador;
 import utilidades.LecturaEscrituraFichero;
 import utilidades.Utilidades;
 
+import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Login  { //AQUI HACER LA AUTOMATRICULA Y LUEGO LOS PROFESORES CALIFICAR
 
@@ -17,6 +20,9 @@ public class Login  { //AQUI HACER LA AUTOMATRICULA Y LUEGO LOS PROFESORES CALIF
 
 		ArrayList<Estudiante> diccionarioEstudiantes = LecturaEscrituraFichero.leerEstudiantes("estudiantes.txt");
 		ArrayList<Trabajador> diccionarioTrabajadores = LecturaEscrituraFichero.leerTrabajadores("trabajadores.txt");
+
+     //   ArrayList<Estudiante> diccionarioEstudiantes= SelectData.selectAllEstudiantes();
+     //   ArrayList <Trabajador> diccionarioTrabajadores= SelectData.selectAllTrabajadores();
 
         Persona aux = new Estudiante(); //no hacer new persona porque es abstract
 

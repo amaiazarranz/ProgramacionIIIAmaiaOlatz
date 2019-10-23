@@ -1,7 +1,6 @@
 package usuarios;
 
 import javax.swing.*;
-import java.util.Date;
 import interfaces.IMensajes;
 
 public abstract class Persona implements IMensajes
@@ -10,7 +9,6 @@ public abstract class Persona implements IMensajes
     private String apellido1;
     private String apellido2;
     private String dni;
-    private Date fechanacimiento;
     private String user;
     private String password;
     private String email;
@@ -18,13 +16,12 @@ public abstract class Persona implements IMensajes
     private String tipopersona;
     private ImageIcon fotoperfil;
 
-    public Persona(String nombre, String apellido1, String apellido2, String dni, Date fechanacimiento, String user,
+    public Persona(String nombre, String apellido1, String apellido2, String dni, String user,
                    String password, String email, String iban, String tipopersona) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
         this.dni = dni;
-        this.fechanacimiento = fechanacimiento;
         this.user = user;
         this.password = password;
         this.email = email;
@@ -32,13 +29,12 @@ public abstract class Persona implements IMensajes
         this.tipopersona=tipopersona;
     }
 
-    public Persona(String nombre, String apellido1, String apellido2, String dni, Date fechanacimiento,
+    public Persona(String nombre, String apellido1, String apellido2, String dni,
                    String user, String password, String email, String iban, String tipopersona,ImageIcon fotoperfil) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
         this.dni = dni;
-        this.fechanacimiento = fechanacimiento;
         this.user = user;
         this.password = password;
         this.email = email;
@@ -80,14 +76,6 @@ public abstract class Persona implements IMensajes
 
     public void setDni(String dni) {
         this.dni = dni;
-    }
-
-    public Date getFechanacimiento() {
-        return fechanacimiento;
-    }
-
-    public void setFechanacimiento(Date fechanacimiento) {
-        this.fechanacimiento = fechanacimiento;
     }
 
     public String getUser() {
